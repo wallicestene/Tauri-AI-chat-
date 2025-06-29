@@ -29,24 +29,6 @@
     "ISO Certified Companies",
     "ISO Certified Companies",
   ];
-
-  function handleSearch() {
-    // Handle search functionality
-  }
-
-  function handleSendMessage() {
-    if (messageInput.trim()) {
-      // Add message logic here
-      messageInput = "";
-    }
-  }
-
-  function handleKeydown(event) {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      handleSendMessage();
-    }
-  }
 </script>
 
 <div class="app-header"></div>
@@ -68,7 +50,7 @@
           bind:value={searchQuery}
           class="search-input"
         />
-        <button class="search-btn" on:click={handleSearch} aria-label="Search">
+        <button class="search-btn" aria-label="Search">
           <img src="/Search.svg" alt="search" />
         </button>
       </div>
@@ -139,7 +121,6 @@
         <textarea
           placeholder="Ask me anything"
           bind:value={messageInput}
-          on:keydown={handleKeydown}
           class="message-input"
           rows="1"
         ></textarea>
