@@ -3,7 +3,7 @@
 
   let searchQuery = "";
   let messageInput = "";
-  let activeChatIndex = 0; // Add this to track active chat
+  let activeChatIndex = 0;
 
   let messages = [
     {
@@ -40,7 +40,7 @@
   }
 </script>
 
-<div class="app-header"></div>
+<!-- <div class="app-header"></div> -->
 <div class="app-container">
   <!-- Left Sidebar -->
   <aside class="sidebar">
@@ -180,7 +180,7 @@
   }
 
   /* Background */
-  .app-header {
+  /* .app-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -191,7 +191,7 @@
     background-position: center;
     z-index: -3;
     pointer-events: none;
-  }
+  } */
 
   /* Main Container */
   .app-container {
