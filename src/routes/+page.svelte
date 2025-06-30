@@ -3,6 +3,8 @@
 
   let searchQuery = "";
   let messageInput = "";
+  let activeChatIndex = 0; // Add this to track active chat
+
   let messages = [
     {
       id: 1,
@@ -29,6 +31,13 @@
     "ISO Certified Companies",
     "ISO Certified Companies",
   ];
+
+  // Add function to handle chat selection
+  function selectChat(index) {
+    activeChatIndex = index;
+    // Here you can add logic to load different messages for different chats
+    console.log(`Selected chat ${index}: ${chatHistory[index]}`);
+  }
 </script>
 
 <div class="app-header"></div>
@@ -64,13 +73,23 @@
     <!-- Chat History List -->
     <div class="chat-history">
       {#each chatHistory as chat, index}
-        <div class="chat-item" class:active={index === 0}>
+        <div 
+          class="chat-item" 
+          class:active={index === activeChatIndex}
+          on:click={() => selectChat(index)}
+          role="button"
+          tabindex="0"
+          on:keydown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              selectChat(index);
+            }
+          }}
+        >
           <span class="chat-title">{chat}</span>
-          {#if index === 3}
-            <div class="more-btn">
-              <img src="/Vector.svg" alt="" />
-            </div>
-          {/if}
+          <button class="more-btn" aria-label="More options" on:click|stopPropagation={() => console.log('More options for chat', index)}>
+            <img src="/Vector.svg" alt="" />
+          </button>
         </div>
       {/each}
     </div>
@@ -352,7 +371,7 @@
   }
 
   .chat-item.active {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
@@ -364,29 +383,33 @@
     white-space: nowrap;
   }
 
-  .chat-item.active .chat-title {
-    color: rgba(255, 255, 255, 0.95);
-  }
+.chat-item:hover .more-btn,
+.chat-item.active .more-btn {
+  opacity: 1;
+  visibility: visible;
+}
 
-  .more-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    padding: 6px;
-    background: none;
-    border: none;
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+ .more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
 
-  .more-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-  }
+.more-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
 
   /* Main Content Styles */
   .main-content {
