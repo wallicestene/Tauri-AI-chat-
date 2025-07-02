@@ -32,15 +32,12 @@
     "ISO Certified Companies",
   ];
 
-  // Add function to handle chat selection
+  // handle chat selection
   function selectChat(index) {
     activeChatIndex = index;
-    // Here you can add logic to load different messages for different chats
-    console.log(`Selected chat ${index}: ${chatHistory[index]}`);
   }
 </script>
 
-<!-- <div class="app-header"></div> -->
 <div class="app-container">
   <!-- Left Sidebar -->
   <aside class="sidebar">
@@ -206,12 +203,12 @@
     border-radius: 16px;
     background: linear-gradient(
       112.58deg,
-      rgba(40, 40, 40, 0.6) 0%,  
-      rgba(60, 60, 60, 0.4) 100% 
+      rgba(40, 40, 40, 0.6) 0%,
+      rgba(60, 60, 60, 0.4) 100%
     );
-    backdrop-filter: blur(40px) saturate(1.3); 
+    backdrop-filter: blur(40px) saturate(1.3);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 
+    box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.08),
       0 20px 60px rgba(0, 0, 0, 0.3),
       0 8px 25px rgba(0, 0, 0, 0.15),
@@ -229,7 +226,7 @@
     width: 240px;
     height: auto;
     padding: 30px 16px;
-    background: rgba(0, 0, 0, 0.19); 
+    background: rgba(0, 0, 0, 0.19);
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
     border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -248,8 +245,8 @@
   /* Assistant Message  */
   .assistant-message {
     align-self: flex-start;
-    background: rgba(0, 0, 0, 0.4); 
-    backdrop-filter: blur(10px); 
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     box-sizing: border-box;
@@ -300,7 +297,7 @@
 
   .search-container:hover,
   .search-container:focus-within {
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.25);
   }
 
@@ -384,11 +381,11 @@
   }
 
   .chat-item:hover {
-    background: rgba(0, 0, 0, 0.2); 
+    background: rgba(0, 0, 0, 0.2);
   }
 
   .chat-item.active {
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
@@ -443,11 +440,11 @@
     border-bottom-right-radius: 16px;
   }
 
- .messages-container {
+  .messages-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: center;
     gap: 20px;
     overflow-y: auto;
@@ -457,7 +454,7 @@
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
   }
 
   .message {
@@ -528,8 +525,8 @@
   .sources-btn {
     height: 30px;
     padding: 0 14px;
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(8px); 
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 15px;
     color: rgba(255, 255, 255, 0.95);
@@ -574,8 +571,8 @@
     height: 90px;
     padding: 5px;
     gap: 12px;
-    background: rgba(0, 0, 0, 0.4); 
-    backdrop-filter: blur(10px); 
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 22px;
     box-sizing: border-box;
@@ -656,8 +653,8 @@
   .mode-btn {
     height: 30px;
     padding: 0 12px;
-    background: rgba(255, 255, 255, 0.15); 
-    backdrop-filter: blur(8px); 
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 15px;
     color: rgba(255, 255, 255, 0.95);
